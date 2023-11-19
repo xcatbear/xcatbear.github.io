@@ -1,0 +1,319 @@
+<html>
+	<head>
+		<link rel="icon" type="image/x-icon" href="LogoWhite.png">
+		<title>Rune CE - API Documentation</title>
+		<style>
+			/* style for our documentation, written by Louka */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
+
+:root
+{
+	/* define global colors, toy with this to rapidly theme */
+
+	/* general background color */
+	--BackgroundColor: rgb(18, 18, 18);
+
+	/* proprietary background color */
+	--ProprietaryBgColor: rgb(26, 0, 28);
+
+	/* color used by most text */
+	--MainTextColor: rgb(200, 200, 200);
+
+	/* color used by links */
+	--LinkColor: rgb(0, 255, 180);
+
+	/* color used by hovered links */
+	--HoverLinkColor: rgb(255, 255, 255);
+
+	/* color used by pressed links */
+	--PressLinkColor: rgb(180, 180, 180);
+
+	/* color used by category titles */
+	--CategoryTextColor: rgb(255, 255, 255);
+
+	/* color used by typenames */
+	--TypenameColor: rgb(0, 140, 200);
+
+	/* color used by typename variants */
+	--TypenameVariantColor: rgb(180, 255, 180);
+
+	/* color used by signature background */
+	--SignatureBgColor: rgb(38, 38, 38);
+
+	/* color used by description background */
+	--DescriptionBgColor: rgb(26, 26, 26);
+
+	/* color used by example background */
+	--ExampleBgColor: var(--DescriptionBgColor);
+
+}
+
+#PageHeader
+{
+	height: 50px;
+	background-color: rgba(26, 26, 26, 0.5);
+}
+
+#PageHeaderCenter
+{
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#PageHeaderLogo
+{
+	max-height: 80%;
+}
+
+#PageHeaderTitle
+{
+	margin-left: 10px;
+	font-size: 24px;
+	font-family: 'Roboto Mono', monospace;
+	text-shadow: 2px 2px 2px black;
+	color: white;
+}
+
+#BodyContainer
+{
+	margin: 5% 15% 0 15%;
+}
+
+.CategoryTitle
+{
+	color: var(--CategoryTextColor);
+	margin-left: 25px;
+	font-weight: normal;
+	font-family: 'Roboto Mono', monospace;
+}
+
+.CodeEntry
+{
+	border-radius: 10px 10px 10px 10px;
+	margin: 25px 25px 0 25px;
+	background-color: var(--SignatureBgColor);
+	box-shadow: 0px 0px 5px #000000;
+	transition: box-shadow .2s, transform .2s;
+}
+
+.CodeEntry:hover
+{
+	box-shadow: 0px 0px 20px #000000;
+	transform: scale(1.05);
+}
+
+.CodeDefinition
+{
+	border-radius: 10px 10px 0 0;
+	padding: 5px 5px 5px 5px;
+	background-color: var(--DescriptionBgColor);
+	font-family: 'Roboto Mono', monospace;
+}
+
+.CodeDefinitionProprietary
+{
+	border-radius: 10px 10px 0 0;
+	padding: 5px 5px 5px 5px;
+	background-color: var(--ProprietaryBgColor);
+	font-family: 'Roboto Mono', monospace;
+}
+
+.ProprietaryNotice
+{
+	position: absolute;
+	right: 20px;
+}
+
+.CodeTypename
+{
+	color: var(--TypenameColor);
+}
+
+.CodeTypenameVariant
+{
+	color: var(--TypenameVariantColor);
+}
+
+.CodeDescription
+{
+	font-size: 14px;
+	font-family: 'Roboto Mono', monospace;
+	text-align: justify;
+	padding: 5px 5px 5px 5px;
+	margin: 0 0 0 5px;
+}
+
+.CodeExample
+{
+	padding: 3% 3% 3% 3%;
+	font-family: 'Roboto Mono', monospace;
+	background-color: var(--ExampleBgColor);
+	border-radius: 0px 0px 10px 10px;
+}
+
+a.Anchor
+{
+	color: var(--MainTextColor);
+	text-decoration: none;
+}
+
+a
+{
+	color: var(--LinkColor);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+
+a:hover
+{
+	color: var(--HoverLinkColor);
+}
+
+a:active
+{
+	color: var(--PressLinkColor);
+}
+
+h3
+{
+	text-align: center;
+	font-weight: normal;
+	font-family: 'Roboto Mono', monospace;
+}
+
+body
+{
+	margin: 0;
+	color: var(--MainTextColor);
+	background-color: var(--BackgroundColor);
+	background-image: url("Bg.png");
+	background-repeat: repeat;
+}
+		</style>
+	</head>
+	<body>
+		<div id="PageHeader">
+			<div id="PageHeaderCenter">
+				<img id="PageHeaderLogo" src="LogoWhite.png"></img>
+				<p id="PageHeaderTitle">Rune CE API</p>
+			</div>
+		</div>
+		<div id="BodyContainer">
+			<h3>Definitions with a violet background are proprietary extensions, which are exclusive to <b>Rune CE</b>. Otherwise, definitions without a colored background are from the <a href="https://github.com/unified-naming-convention/NamingStandard" target="_blank">UNC standard</a>.</h3>
+			<h1 class="CategoryTitle">Environment Library</h1><div id="getgenv" class="CodeEntry">
+	<p class="CodeDefinition">
+		<span class="CodeTypename">table</span> <a class="Anchor" href="#getgenv">getgenv</a>(<span class="CodeTypename">void</span>)
+	</p>
+	<p class="CodeDescription">
+		Returns the environment that will be applied to each script ran by Rune CE.
+	</p>
+	<p class="CodeExample">
+		No example provided
+	</p>
+</div><div id="getrenv" class="CodeEntry">
+	<p class="CodeDefinition">
+		<span class="CodeTypename">table</span> <a class="Anchor" href="#getrenv">getrenv</a>(<span class="CodeTypename">void</span>)
+	</p>
+	<p class="CodeDescription">
+		Returns the global thread environment for the LocalScript context.
+	</p>
+	<p class="CodeExample">
+		No example provided
+	</p>
+</div><div id="getreg" class="CodeEntry">
+	<p class="CodeDefinition">
+		<span class="CodeTypename">table</span> <a class="Anchor" href="#getreg">getreg</a>(<span class="CodeTypename">void</span>)
+	</p>
+	<p class="CodeDescription">
+		Returns the Lua registry.
+	</p>
+	<p class="CodeExample">
+		No example provided
+	</p>
+</div><div id="getinstances" class="CodeEntry">
+	<p class="CodeDefinition">
+		<span class="CodeTypename">table<span class="CodeTypenameVariant"&gt;</span>&lt;object&gt;</span></span> <a class="Anchor" href="#getinstances">getinstances</a>(<span class="CodeTypename">void</span>)
+	</p>
+	<p class="CodeDescription">
+		Returns a list of all instances within the game.
+	</p>
+	<p class="CodeExample">
+		No example provided
+	</p>
+</div><div id="getnilinstances" class="CodeEntry">
+	<p class="CodeDefinition">
+		<span class="CodeTypename">table<span class="CodeTypenameVariant"&gt;</span>&lt;BaseScript&gt;</span></span> <a class="Anchor" href="#getnilinstances">getnilinstances</a>(<span class="CodeTypename">void</span>)
+	</p>
+	<p class="CodeDescription">
+		Returns a list of all instances parented to nil within the game.
+	</p>
+	<p class="CodeExample">
+		No example provided
+	</p>
+</div><div id="getscripts" class="CodeEntry">
+	<p class="CodeDefinition">
+		<span class="CodeTypename">table<span class="CodeTypenameVariant"&gt;</span>&lt;BaseScript&gt;</span></span> <a class="Anchor" href="#getscripts">getscripts</a>(<span class="CodeTypename">void</span>)
+	</p>
+	<p class="CodeDescription">
+		Returns a list of all scripts within the game.
+	</p>
+	<p class="CodeExample">
+		No example provided
+	</p>
+</div><div id="getmodules" class="CodeEntry">
+	<p class="CodeDefinition">
+		<span class="CodeTypename">table<span class="CodeTypenameVariant"&gt;</span>&lt;ModuleScript&gt;</span></span> <a class="Anchor" href="#getmodules">getmodules</a>(<span class="CodeTypename">void</span>)
+	</p>
+	<p class="CodeDescription">
+		Returns a list of all ModuleScripts within the game.
+	</p>
+	<p class="CodeExample">
+		No example provided
+	</p>
+</div><h1 class="CategoryTitle">Encryption Library</h1><div id="base64_encode" class="CodeEntry">
+	<p class="CodeDefinitionProprietary">
+		<span class="CodeTypename">string</span> <a class="Anchor" href="#base64_encode">base64_encode</a>(<span class="CodeTypename">string</span> Data)
+	</p>
+	<p class="CodeDescription">
+		Encodes Data in base64.
+	</p>
+	<p class="CodeExample">
+		No example provided
+	</p>
+</div><div id="base64_decode" class="CodeEntry">
+	<p class="CodeDefinitionProprietary">
+		<span class="CodeTypename">string</span> <a class="Anchor" href="#base64_decode">base64_decode</a>(<span class="CodeTypename">string</span> Data)
+	</p>
+	<p class="CodeDescription">
+		Decodes Data from base64.
+	</p>
+	<p class="CodeExample">
+		No example provided
+	</p>
+</div><h1 class="CategoryTitle">Closure Library</h1><div id="iscclosure" class="CodeEntry">
+	<p class="CodeDefinition">
+		<span class="CodeTypename">bool</span> <a class="Anchor" href="#iscclosure">iscclosure</a>(<span class="CodeTypename">function</span> f)
+	</p>
+	<p class="CodeDescription">
+		Returns true if f is a CClosure.
+	</p>
+	<p class="CodeExample">
+		No example provided
+	</p>
+</div><div id="islclosure" class="CodeEntry">
+	<p class="CodeDefinition">
+		<span class="CodeTypename">bool</span> <a class="Anchor" href="#islclosure">islclosure</a>(<span class="CodeTypename">function</span> f)
+	</p>
+	<p class="CodeDescription">
+		Returns true if f is an LClosure.
+	</p>
+	<p class="CodeExample">
+		No example provided
+	</p>
+</div>
+		</div>
+	</body>
+</html>
